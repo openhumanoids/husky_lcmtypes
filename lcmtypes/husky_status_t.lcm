@@ -1,0 +1,42 @@
+package husky;
+
+// Analog to
+// https://github.com/husky/husky/blob/indigo-devel/husky_msgs/msg/HuskyStatus.msg
+
+struct husky_status_t {
+  int64_t utime;
+
+  // MCU Uptime, in ms
+  int32_t uptime;
+
+  // ROS Control loop frequency(PC - side)
+  double ros_control_loop_freq;
+
+  // Current draw of platform components, in amps
+  double mcu_and_user_port_current;
+  double left_driver_current;
+  double right_driver_current;
+
+  // Voltage of platform components, in volts
+  double battery_voltage;
+  double left_driver_voltage;
+  double right_driver_voltage;
+
+  // Component temperatures, in C
+  double left_driver_temp;
+  double right_driver_temp;
+  double left_motor_temp;
+  double right_motor_temp;
+
+  // Battery capacity(Wh) and charge(% ) estimate
+  int16_t capacity_estimate;
+  double charge_estimate;
+
+  // Husky error / stop conditions
+  boolean timeout;
+  boolean lockout;
+  boolean e_stop;
+  boolean ros_pause;
+  boolean no_battery;
+  boolean current_limit;
+}
