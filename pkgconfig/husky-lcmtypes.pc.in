@@ -1,0 +1,12 @@
+prefix=@HUSKY-LCMTYPES_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib@LIB_SUFFIX@
+includedir=${prefix}/include/lcmtypes
+
+Name: husky-lcmtypes
+Description: LCM types for the Clearpath Husky
+Requires:  lcm
+Version: 0.2.7
+Libs: -L${libdir} -lhusky-lcmtypes
+Cflags: -I${includedir}
+classpath=
